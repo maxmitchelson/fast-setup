@@ -1,0 +1,14 @@
+{
+    "id": "vlc",
+    "name": "VLC Media Player",
+
+    "requiresNetwork": false,
+    "requiresAdmin": true,
+    "autoDeletes": false,
+
+    "languageDependent": false,
+
+    "paths": {
+        "default": "vlc-3.0.16-win64.exe"
+    }
+}

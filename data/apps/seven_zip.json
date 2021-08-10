@@ -1,0 +1,14 @@
+{
+    "id": "seven_zip",
+    "name": "7-zip",
+
+    "requiresNetwork": false,
+    "requiresAdmin": true,
+    "autoDeletes": false,
+
+    "languageDependent": false,
+
+    "paths": {
+        "default": "7z1900-x64.exe"
+    }
+}

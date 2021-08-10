@@ -1,0 +1,14 @@
+{
+    "id": "java",
+    "name": "Java SE",
+
+    "requiresNetwork": true,
+    "requiresAdmin": true,
+    "autoDeletes": false,
+
+    "languageDependent": false,
+
+    "paths": {
+        "default": "jre-8u301-windows-x64.exe"
+    }
+}

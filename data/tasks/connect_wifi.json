@@ -1,0 +1,8 @@
+{
+    "id": "connect_wifi",
+    "requiresAdmin": true,
+    "settings": {
+        "ssid": "mitchelson",
+        "password": "MeloMax3699"
+    }
+}

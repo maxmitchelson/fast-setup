@@ -1,0 +1,13 @@
+{
+    "apps": [
+        "seven_zip",
+        "vlc",
+        "java",
+        "chrome",
+        "acrobat_reader"
+    ],
+    "tasks": [
+        "connect_wifi",
+        "sync_time"
+    ]
+}

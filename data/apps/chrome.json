@@ -1,0 +1,15 @@
+{
+    "id": "chrome",
+    "name": "Google Chrome",
+
+    "requiresNetwork": true,
+    "requiresAdmin": true,
+    "autoDeletes": false,
+
+    "languageDependent": true,
+
+    "paths": {
+        "fr": "ChromeSetup.exe",
+        "en": "ChromeSetup.exe"
+    }
+}

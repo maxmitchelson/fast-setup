@@ -1,0 +1,15 @@
+{
+    "id": "acrobat_reader",
+    "name": "Adobe Acrobat Reader DC",
+
+    "requiresNetwork": true,
+    "requiresAdmin": true,
+    "autoDeletes": true,
+
+    "languageDependent": true,
+
+    "paths": {
+        "fr": "readerdc_fr_xa_crd_install.exe",
+        "en": "readerdc_en_xa_crd_install.exe"
+    }
+}

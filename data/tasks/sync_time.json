@@ -1,0 +1,8 @@
+{
+    "id": "sync_time",
+    "requiresAdmin": true,
+    "settings": {
+        "time_server": "time.windows.com",
+        "auto_tz": true
+    }
+}
