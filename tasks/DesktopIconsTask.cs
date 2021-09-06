@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace FastSetup.tasks
 {
-    public class DesktopIconsTask : Task
+    public class DesktopIconsTask : BaseTask
     {
 
         public DesktopIconsTask(string baseConfigFile) : base("desktop_icons", baseConfigFile)

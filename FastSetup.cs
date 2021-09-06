@@ -22,7 +22,7 @@ namespace FastSetup
             Tasks.RegisterTasks();
             // registerProfiles();
 
-            foreach (Task task in Tasks.GetAllTasks())
+            foreach (BaseTask task in Tasks.GetAllTasks())
             {
                 task.Start();
             }
