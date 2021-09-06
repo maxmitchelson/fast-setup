@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace ConfigHelper.tasks
+namespace FastSetup.tasks
 {
     public class DesktopIconsTask : Task
     {

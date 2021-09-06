@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using SimpleWifi;
 
-namespace ConfigHelper.tasks
+namespace FastSetup.tasks
 {
     public class ConnectWifiTask : Task
     {
@@ -28,9 +28,9 @@ namespace ConfigHelper.tasks
 
         public override void Start()
         {
-            ConfigHelper.AlertF("task.started", new Dictionary<string, string>()
+            FastSetup.AlertF("task.started", new Dictionary<string, string>()
                 {
-                    { "task_name", ConfigHelper.GetTranslation("task.connect_wifi.name") }
+                    { "task_name", FastSetup.GetTranslation("task.connect_wifi.name") }
                 }
             );
 
@@ -44,7 +44,7 @@ namespace ConfigHelper.tasks
                 {
                     if (this.password == null)
                     {
-                        ConfigHelper.Alert("task.connect_wifi.missing_parameter.password");
+                        FastSetup.Alert("task.connect_wifi.missing_parameter.password");
                     }
                     else
                     {
@@ -54,7 +54,7 @@ namespace ConfigHelper.tasks
                         }
                         else
                         {
-                            ConfigHelper.Alert("task.connect_wifi.invalid_password");
+                            FastSetup.Alert("task.connect_wifi.invalid_password");
                         }
                     }
                 }
@@ -63,7 +63,7 @@ namespace ConfigHelper.tasks
                 {
                     if (this.username == null)
                     {
-                        ConfigHelper.Alert("task.connect_wifi.missing_parameter.username");
+                        FastSetup.Alert("task.connect_wifi.missing_parameter.username");
                     }
                     else
                     {
@@ -75,7 +75,7 @@ namespace ConfigHelper.tasks
                 {
                     if (this.domain == null)
                     {
-                        ConfigHelper.Alert("task.connect_wifi.missing_parameter.domain");
+                        FastSetup.Alert("task.connect_wifi.missing_parameter.domain");
                     }
                     else
                     {
@@ -88,7 +88,7 @@ namespace ConfigHelper.tasks
             }
             else
             {
-                ConfigHelper.Alert("task.connect_wifi.failed.ap_not_found");
+                FastSetup.Alert("task.connect_wifi.failed.ap_not_found");
             }
         }
 
@@ -106,12 +106,12 @@ namespace ConfigHelper.tasks
         {
             if (isSuccess)
             {
-                ConfigHelper.Alert("task.connect_wifi.connected");
+                FastSetup.Alert("task.connect_wifi.connected");
             }
 
             else
             {
-                ConfigHelper.Alert("task.connect_wifi.failed.connection_failed");
+                FastSetup.Alert("task.connect_wifi.failed.connection_failed");
             }
         }
     }

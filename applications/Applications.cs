@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace ConfigHelper.applications
+namespace FastSetup.applications
 {
     public static class Applications
     {
@@ -34,7 +34,7 @@ namespace ConfigHelper.applications
         public static void AutoRegister()
         {
             // Register all applications with config in /data/apps
-            foreach (string filePath in Directory.GetFiles(ConfigHelper.APPS_DIRECTORY, "*.json"))
+            foreach (string filePath in Directory.GetFiles(FastSetup.APPS_DIRECTORY, "*.json"))
             {
                 RegisterApplication(new Application(Path.GetFileName(filePath)));
             }

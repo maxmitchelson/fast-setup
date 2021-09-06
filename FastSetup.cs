@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using ConfigHelper.applications;
-using ConfigHelper.tasks;
+using FastSetup.applications;
+using FastSetup.tasks;
 
-namespace ConfigHelper
+namespace FastSetup
 {
-    class ConfigHelper
+    class FastSetup
     {
         // Paths to resources
         public static string BASE_DIRECTORY = Directory.GetCurrentDirectory();
@@ -22,7 +22,7 @@ namespace ConfigHelper
             Tasks.RegisterTasks();
             // registerProfiles();
 
-            foreach(Task task in Tasks.GetAllTasks())
+            foreach (Task task in Tasks.GetAllTasks())
             {
                 task.Start();
             }
@@ -40,7 +40,7 @@ namespace ConfigHelper
             // TODO: formatted alert system
             string message = GetTranslation(messageKey);
 
-            foreach(KeyValuePair<string, string> KeyValuePair in KeyValuePairsToFormat)
+            foreach (KeyValuePair<string, string> KeyValuePair in KeyValuePairsToFormat)
             {
                 message = message.Replace("{" + KeyValuePair.Key + "}", KeyValuePair.Value);
             }

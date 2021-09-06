@@ -2,29 +2,31 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
-namespace ConfigHelper.tasks
+namespace FastSetup.tasks
 {
     public class SyncTimeTask : Task
     {
         private string time_server;
+        private string default_tz;
         private bool auto_tz;
 
         public SyncTimeTask(string baseConfigFile) : base("sync_time", baseConfigFile)
         {
             this.time_server = this.settings.time_server;
             this.auto_tz = this.settings.auto_tz;
+            this.default_tz = this.settings.default_tz;
         }
 
         public override List<string> GetCustomConfigKeys()
         {
-            return new List<string>() { "time_server", "auto_tz" };
+            return new List<string>() { "time_server", "auto_tz", "default_tz" };
         }
 
         public override void Start()
         {
-            ConfigHelper.AlertF("task.started", new Dictionary<string, string>()
+            FastSetup.AlertF("task.started", new Dictionary<string, string>()
                 {
-                    { "task_name", ConfigHelper.GetTranslation("task.sync_time.name") }
+                    { "task_name", FastSetup.GetTranslation("task.sync_time.name") }
                 }
             );
 
@@ -34,6 +36,9 @@ namespace ConfigHelper.tasks
 
                 // Start time service
                 "net start w32time",
+
+                // Manually set time zone
+                $"tzutil /s \"{this.default_tz}\"",
 
                 // Manually set time server url
                 $"w32tm /config /manualpeerlist:{this.time_server},0x1 /update",
@@ -51,7 +56,7 @@ namespace ConfigHelper.tasks
 
             for (int i = 0; i < commands.Count; i++)
             {
-                Console.WriteLine($"{i+1}- {commands[i]}");
+                Console.WriteLine($"{i + 1}- {commands[i]}");
                 Process process = new Process
                 {
                     StartInfo = new ProcessStartInfo

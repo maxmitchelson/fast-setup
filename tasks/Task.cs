@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json.Linq;
 
-namespace ConfigHelper.tasks
+namespace FastSetup.tasks
 {
     public abstract class Task
     {
@@ -47,7 +47,7 @@ namespace ConfigHelper.tasks
                     throw new ArgumentNullException($"settings in tasks/{this.baseConfigFile}");
 
                 }
-                
+
                 foreach (string key in this.CUSTOM_CONFIG_KEYS)
                 {
                     if (jsonConfig.settings[key] == null)
@@ -70,7 +70,7 @@ namespace ConfigHelper.tasks
 
         protected JObject ReadConfigFile()
         {
-            string configFilePath = Path.Combine(ConfigHelper.TASKS_DIRECTORY, baseConfigFile);
+            string configFilePath = Path.Combine(FastSetup.TASKS_DIRECTORY, baseConfigFile);
 
             if (File.Exists(configFilePath))
             {

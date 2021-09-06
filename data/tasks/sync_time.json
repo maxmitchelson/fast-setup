@@ -3,6 +3,7 @@
     "requiresAdmin": true,
     "settings": {
         "time_server": "time.windows.com",
-        "auto_tz": true
+        "auto_tz": true,
+        "default_tz": "Eastern Standard Time"
     }
 }

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ConfigHelper.tasks
+namespace FastSetup.tasks
 {
     public class Tasks
     {

@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.IO;
 using Newtonsoft.Json.Linq;
 
-namespace ConfigHelper.applications
+namespace FastSetup.applications
 {
     public class Application
     {
@@ -42,7 +42,7 @@ namespace ConfigHelper.applications
             List<string> pathLanguages = new List<string>(this.paths.Keys);
             foreach (string lang in pathLanguages)
             {
-                string tempPath = Path.Combine(ConfigHelper.APPS_DIRECTORY, "bin");
+                string tempPath = Path.Combine(FastSetup.APPS_DIRECTORY, "bin");
                 if (this.languageDependent)
                 {
                     tempPath = Path.Combine(tempPath, lang);
@@ -86,7 +86,7 @@ namespace ConfigHelper.applications
 
         protected JObject ReadConfigFile()
         {
-            string configFilePath = Path.Combine(ConfigHelper.APPS_DIRECTORY, baseConfigFile);
+            string configFilePath = Path.Combine(FastSetup.APPS_DIRECTORY, baseConfigFile);
 
             if (File.Exists(configFilePath))
             {
@@ -107,15 +107,15 @@ namespace ConfigHelper.applications
             if (this.autoDeletes)
             {
                 // Creates a 'temp' directory if it doesn't exist
-                string tempDirectoryPath = Path.Combine(ConfigHelper.APPS_DIRECTORY, "temp");
-                if (! Directory.Exists(tempDirectoryPath))
+                string tempDirectoryPath = Path.Combine(FastSetup.APPS_DIRECTORY, "temp");
+                if (!Directory.Exists(tempDirectoryPath))
                 {
                     Directory.CreateDirectory(tempDirectoryPath);
                 }
 
                 // Creates a temporary copy of the file if it doesn't exist
                 string tempFilePath = Path.Combine(tempDirectoryPath, Path.GetFileName(this.paths[language]));
-                if (! File.Exists(tempFilePath))
+                if (!File.Exists(tempFilePath))
                 {
                     File.Copy(this.paths[language], tempFilePath);
                 }
