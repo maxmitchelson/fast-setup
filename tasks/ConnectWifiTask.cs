@@ -3,7 +3,7 @@ using SimpleWifi;
 
 namespace FastSetup.tasks
 {
-    public class ConnectWifiTask : Task
+    public class ConnectWifiTask : BaseTask
     {
         private Wifi wifi;
         private string ssid;

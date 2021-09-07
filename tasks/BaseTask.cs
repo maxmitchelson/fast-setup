@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 
 namespace FastSetup.tasks
 {
-    public abstract class Task
+    public abstract class BaseTask
     {
         public string id;
         public string baseConfigFile;
@@ -17,7 +17,7 @@ namespace FastSetup.tasks
         private List<string> CUSTOM_CONFIG_KEYS;
         private static List<string> REQUIRED_CONFIG_KEYS = new List<string>() { "id", "requiresAdmin" };
 
-        protected Task(string idIn, string baseConfigFileIn)
+        protected BaseTask(string idIn, string baseConfigFileIn)
         {
             this.id = idIn;
             this.baseConfigFile = baseConfigFileIn;

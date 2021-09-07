@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace FastSetup.tasks
 {
-    public class SyncTimeTask : Task
+    public class SyncTimeTask : BaseTask
     {
         private string time_server;
         private string default_tz;

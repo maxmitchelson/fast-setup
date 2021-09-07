@@ -4,16 +4,16 @@ namespace FastSetup.tasks
 {
     public class Tasks
     {
-        private static List<Task> allTasks = new List<Task>();
+        private static List<BaseTask> allTasks = new List<BaseTask>();
         private static List<string> allTaskIDs = new List<string>();
 
 
-        static Task ConnectWifi;
-        static Task SyncTime;
-        static Task DesktopIcons;
+        static BaseTask ConnectWifi;
+        static BaseTask SyncTime;
+        static BaseTask DesktopIcons;
 
 
-        public static List<Task> GetAllTasks()
+        public static List<BaseTask> GetAllTasks()
         {
             return allTasks;
         }
@@ -30,7 +30,7 @@ namespace FastSetup.tasks
             DesktopIcons = Register(new DesktopIconsTask("desktop_icons.json"));
         }
 
-        public static Task Register(Task task)
+        public static BaseTask Register(BaseTask task)
         {
             allTasks.Add(task);
             allTaskIDs.Add(task.id);
