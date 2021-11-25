@@ -1,3 +1,5 @@
+`------>  I changed job, therefore development of this app is suspended and this project is archived  <------`
+
 # ⚡ Fast Setup ⚡
 This is a small application designed to make the installation process of new Windows PCs faster and easier. 
 This project was intended to automate parts of my job as a computer technician in a retail chain.
